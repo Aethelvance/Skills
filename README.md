@@ -1,67 +1,73 @@
 # Skills
 
-Colección de skills reutilizables para agentes (OpenCode, Claude Code, Cursor, etc.).
-Cada skill es autocontenida en su propia carpeta con su `SKILL.md`, `scripts/` y `references/`.
+Collection of reusable agent skills (OpenCode, Claude Code, Cursor, etc.).
+Each skill is self-contained in its own folder with its `SKILL.md`, `scripts/` and `references/`.
 
-## Skills disponibles
+## Available skills
 
-| Skill | Descripción | Carpeta |
-|-------|-------------|---------|
-| jev-skill-profesional | Juicio tipado con Jev System One (TypeSafe): veredictos `noul / score / choice` sobre un `state` estructurado en un solo round-trip. Para routing, ranking, extracción, verificación, clasificación, scoring o gating. | `jev-skill-profesional/` |
+| Skill | Description | Folder |
+|-------|-------------|--------|
+| jev-skill-profesional | Typed judgement with Jev System One (TypeSafe): `noul / score / choice` verdicts over a structured `state` in a single round-trip. For routing, ranking, extraction, verification, classification, scoring, or gating. | `jev-skill-profesional/` |
 
-## Estructura
+## Structure
 
 ```text
 Skills/
-├── README.md                  # este archivo
+├── README.md                  # this file
 ├── .gitignore
 ├── jev-skill-profesional/      # skill 1
-│   ├── SKILL.md               # contrato completo
-│   ├── AGENTS.md              # resumen para agentes
-│   ├── README.md              # install + verify de la skill
+│   ├── SKILL.md               # full contract
+│   ├── AGENTS.md              # agent summary
+│   ├── README.md              # skill install + verify
 │   ├── discovery.json
 │   ├── scripts/
-│   │   ├── jev_call.py        # 1 POST, valida respuestas, gate de confianza
-│   │   └── run_evals.py       # evaluador built-in (19 offline + 8 live)
-│   ├── references/            # docs por tema (transport, primitives, etc.)
-│   └── evals/                 # casos golden
-└── <NuevaSkill>/              # futuras skills siguen el mismo patrón
+│   │   ├── jev_call.py        # 1 POST, validates answers, confidence gate
+│   │   └── run_evals.py       # built-in evaluator (19 offline + 8 live)
+│   ├── references/            # per-topic docs (transport, primitives, etc.)
+│   └── evals/                 # golden cases
+└── <NewSkill>/                # future skills follow the same pattern
     ├── SKILL.md
     ├── README.md
     ├── scripts/
     └── references/
 ```
 
-## Instalación
+## Installation
 
-Copia la carpeta de la skill que necesites a donde tu agente lea skills, por ejemplo:
+Via `skills.sh` (recommended):
+
+```bash
+npx skills add Aethelvance/Skills --skill jev-skill-profesional
+```
+
+Or copy the skill folder you need to wherever your agent reads skills, for example:
 
 ```bash
 cp -r jev-skill-profesional/ ~/.agents/skills/
 ```
 
-No hay dependencias más allá de Python 3 (stdlib) salvo que el README de cada skill indique lo contrario.
+No dependencies beyond Python 3 (stdlib) unless a skill's README says otherwise.
 
-## Verificación
+## Verification
 
-Cada skill trae su propio evaluador. Ejemplo:
+Each skill ships its own evaluator. Example:
 
 ```bash
 python3 jev-skill-profesional/scripts/run_evals.py
-TYPESAFE_API_KEY=... python3 jev-skill-profesional/scripts/run_evals.py  # incluye checks live
+TYPESAFE_API_KEY=... python3 jev-skill-profesional/scripts/run_evals.py  # includes live checks
 ```
 
-## Añadir una nueva skill
+## Adding a new skill
 
-1. Crea una carpeta `MiNuevaSkill/` en la raíz.
-2. Incluye como mínimo:
-   - `SKILL.md` (nombre, descripción, contrato, uso)
-   - `README.md` (install + verify + ejemplo)
-   - `scripts/` (código ejecutable, stdlib preferente)
-3. Opcional pero recomendado: `AGENTS.md`, `references/`, `evals/`.
-4. Actualiza la tabla de `Skills disponibles` de este README.
+1. Create a `MyNewSkill/` folder at the root.
+2. Include at minimum:
+   - `SKILL.md` (name, description, contract, usage)
+   - `README.md` (install + verify + example)
+   - `scripts/` (executable code, stdlib preferred)
+3. Optional but recommended: `AGENTS.md`, `references/`, `evals/`.
+4. Update the `Available skills` table in this README.
 
 ## Roadmap
 
 - [x] jev-skill-profesional
-- [ ] Próximas skills...
+- [ ] Next skills...

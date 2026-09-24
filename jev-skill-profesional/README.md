@@ -5,7 +5,11 @@ over a structured `state` in a single round-trip. Jev judges; your code executes
 
 ## Install
 
-Copy this folder anywhere your agent reads skills from (e.g. `~/.agents/skills/`,
+```bash
+npx skills add Aethelvance/Skills --skill jev-skill-profesional
+```
+
+Or copy this folder anywhere your agent reads skills from (e.g. `~/.agents/skills/`,
 Claude Code, Cursor, OpenCode). No dependencies beyond Python 3 (stdlib only).
 
 ## Verify (the skill ships its own evaluator)
