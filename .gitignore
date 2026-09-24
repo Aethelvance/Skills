@@ -4,6 +4,8 @@ __pycache__/
 .venv/
 venv/
 .env
+*.env
+test/
 verdict.json
 state.json
 questions.json
