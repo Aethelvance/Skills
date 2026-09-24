@@ -1,4 +1,4 @@
-# JevSkill Profesional
+# jev-skill-profesional
 
 Use this skill for typed judgement with Jev System One (TypeSafe): `noul / score /
 choice` answers over a structured `state` in a single round-trip.

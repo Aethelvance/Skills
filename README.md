@@ -7,7 +7,7 @@ Cada skill es autocontenida en su propia carpeta con su `SKILL.md`, `scripts/` y
 
 | Skill | Descripción | Carpeta |
 |-------|-------------|---------|
-| JevSkill-Profesional | Juicio tipado con Jev System One (TypeSafe): veredictos `noul / score / choice` sobre un `state` estructurado en un solo round-trip. Para routing, ranking, extracción, verificación, clasificación, scoring o gating. | `JevSkill-Profesional/` |
+| jev-skill-profesional | Juicio tipado con Jev System One (TypeSafe): veredictos `noul / score / choice` sobre un `state` estructurado en un solo round-trip. Para routing, ranking, extracción, verificación, clasificación, scoring o gating. | `jev-skill-profesional/` |
 
 ## Estructura
 
@@ -15,7 +15,7 @@ Cada skill es autocontenida en su propia carpeta con su `SKILL.md`, `scripts/` y
 Skills/
 ├── README.md                  # este archivo
 ├── .gitignore
-├── JevSkill-Profesional/      # skill 1
+├── jev-skill-profesional/      # skill 1
 │   ├── SKILL.md               # contrato completo
 │   ├── AGENTS.md              # resumen para agentes
 │   ├── README.md              # install + verify de la skill
@@ -37,7 +37,7 @@ Skills/
 Copia la carpeta de la skill que necesites a donde tu agente lea skills, por ejemplo:
 
 ```bash
-cp -r JevSkill-Profesional/ ~/.agents/skills/
+cp -r jev-skill-profesional/ ~/.agents/skills/
 ```
 
 No hay dependencias más allá de Python 3 (stdlib) salvo que el README de cada skill indique lo contrario.
@@ -47,8 +47,8 @@ No hay dependencias más allá de Python 3 (stdlib) salvo que el README de cada 
 Cada skill trae su propio evaluador. Ejemplo:
 
 ```bash
-python3 JevSkill-Profesional/scripts/run_evals.py
-TYPESAFE_API_KEY=... python3 JevSkill-Profesional/scripts/run_evals.py  # incluye checks live
+python3 jev-skill-profesional/scripts/run_evals.py
+TYPESAFE_API_KEY=... python3 jev-skill-profesional/scripts/run_evals.py  # incluye checks live
 ```
 
 ## Añadir una nueva skill
@@ -63,5 +63,5 @@ TYPESAFE_API_KEY=... python3 JevSkill-Profesional/scripts/run_evals.py  # incluy
 
 ## Roadmap
 
-- [x] JevSkill-Profesional
+- [x] jev-skill-profesional
 - [ ] Próximas skills...

@@ -1,5 +1,5 @@
 ---
-name: JevSkill-Profesional
+name: jev-skill-profesional
 description: >-
   Judge with Jev System One (TypeSafe): typed noul/score/choice verdicts over a
   structured state in one round-trip. Use when the user needs programmable
@@ -9,7 +9,7 @@ description: >-
   needs a calibrated probability instead of generated prose. Does not generate
   text, run workflows, or touch actuators; code owns execution.
 license: MIT
-activation: /JevSkill-Profesional
+activation: /jev-skill-profesional
 metadata:
   author: Aethelvance
   version: 1.0.0
@@ -31,7 +31,7 @@ compatibility: >-
   no browser, pixel, or actuator access required.
 ---
 
-# /JevSkill-Profesional
+# /jev-skill-profesional
 
 Turn a decision into typed Jev judgements. Code owns the workflow; Jev supplies
 one round of calibrated `noul / score / choice` answers over a structured `state`.

@@ -1,4 +1,4 @@
-# JevSkill-Profesional
+# jev-skill-profesional
 
 Typed judgement with Jev System One (TypeSafe): `noul / score / choice` answers
 over a structured `state` in a single round-trip. Jev judges; your code executes.

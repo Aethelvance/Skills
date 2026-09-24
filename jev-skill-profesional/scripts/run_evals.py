@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Self-contained evaluator for JevSkill-Profesional (stdlib only).
+"""Self-contained evaluator for jev-skill-profesional (stdlib only).
 
 The skill ships its own judge: run this file and it verifies the whole skill
 is coherent and true. No dependencies, no test framework, no outside folders.
@@ -53,7 +53,7 @@ def post(body: object, timeout_s: float = 25.0,
         API_URL, data=data,
         headers={"Authorization": "Bearer " + (api_key or ""),
                  "Content-Type": "application/json",
-                 "User-Agent": "JevSkill-Profesional/run_evals"}, method="POST")
+                 "User-Agent": "jev-skill-profesional/run_evals"}, method="POST")
     try:
         with urllib.request.urlopen(req, timeout=timeout_s) as r:
             return r.status, json.loads(r.read().decode() or "{}")
@@ -76,7 +76,7 @@ def section_a() -> None:
     sk = open(os.path.join(HERE, "SKILL.md"), encoding="utf-8").read()
     fm = sk.split("---")[1]
     check("A2 frontmatter name matches dir",
-          "name: JevSkill-Profesional" in fm, "name")
+          "name: jev-skill-profesional" in fm, "name")
     check("A3 description present", "description:" in fm)
     check("A4 gotchas section", "## Gotchas" in sk)
     refs = re.findall(r"references/([\w-]+\.md)", sk)
@@ -159,7 +159,7 @@ def live_call(state: dict, questions: dict, key: str, **kw) -> tuple[int, dict]:
     req = urllib.request.Request(
         API_URL, data=data,
         headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
-                 "User-Agent": "JevSkill-Profesional/run_evals"}, method="POST")
+                 "User-Agent": "jev-skill-profesional/run_evals"}, method="POST")
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             return r.status, json.loads(r.read().decode() or "{}")
@@ -235,7 +235,7 @@ def section_c(key: str) -> None:
 
 
 def main() -> int:
-    print("JevSkill-Profesional self-evaluation (AIO evaluator)")
+    print("jev-skill-profesional self-evaluation (AIO evaluator)")
     section_a()
     section_b()
     key = load_key()
