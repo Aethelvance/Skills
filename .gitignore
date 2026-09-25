@@ -6,7 +6,6 @@ venv/
 .env
 *.env
 test/
-verdict.json
-state.json
-questions.json
+.agents/
+**/verdict.json
 .DS_Store
