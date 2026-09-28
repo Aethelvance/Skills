@@ -1,4 +1,4 @@
-# jev-skill-profesional
+# jev-production-grade
 
 Typed judgement with Jev System One (TypeSafe): `noul / score / choice` answers
 over a structured `state` in a single round-trip. Jev judges; your code executes.
@@ -6,7 +6,7 @@ over a structured `state` in a single round-trip. Jev judges; your code executes
 ## Install
 
 ```bash
-npx skills add Aethelvance/Skills --skill jev-skill-profesional
+npx skills add Aethelvance/Skills --skill jev-production-grade
 ```
 
 Or copy this folder anywhere your agent reads skills from (e.g. `~/.agents/skills/`,

@@ -117,7 +117,7 @@ def post_once(endpoint: str, body: dict, api_key: str, timeout_s: float) -> tupl
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
-            "User-Agent": "jev-skill-profesional/1.0.0",
+            "User-Agent": "jev-production-grade/1.0.0",
         },
         method="POST",
     )

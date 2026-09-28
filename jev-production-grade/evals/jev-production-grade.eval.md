@@ -1,4 +1,4 @@
-# Eval: jevskill-profesional-skill
+# Eval: jev-production-grade
 
 Regression spec. Run the golden inputs through `scripts/jev_call.py --mock` and
 check the binary criteria below. Golden cases are input-only; the mock gives

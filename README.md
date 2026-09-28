@@ -7,7 +7,7 @@ Each skill is self-contained in its own folder with its `SKILL.md`, `scripts/` a
 
 | Skill | Description | Folder |
 |-------|-------------|--------|
-| jev-skill-profesional | Typed judgement with Jev System One (TypeSafe): `noul / score / choice` verdicts over a structured `state` in a single round-trip. For routing, ranking, extraction, verification, classification, scoring, or gating. | `jev-skill-profesional/` |
+| jev-production-grade | Typed judgement with Jev System One (TypeSafe): `noul / score / choice` verdicts over a structured `state` in a single round-trip. For routing, ranking, extraction, verification, classification, scoring, or gating. | `jev-production-grade/` |
 
 ## Structure
 
@@ -15,7 +15,7 @@ Each skill is self-contained in its own folder with its `SKILL.md`, `scripts/` a
 Skills/
 ├── README.md                  # this file
 ├── .gitignore
-├── jev-skill-profesional/      # skill 1
+├── jev-production-grade/      # skill 1
 │   ├── SKILL.md               # full contract
 │   ├── AGENTS.md              # agent summary
 │   ├── README.md              # skill install + verify
@@ -37,13 +37,13 @@ Skills/
 Via `skills.sh` (recommended):
 
 ```bash
-npx skills add Aethelvance/Skills --skill jev-skill-profesional
+npx skills add Aethelvance/Skills --skill jev-production-grade
 ```
 
 Or copy the skill folder you need to wherever your agent reads skills, for example:
 
 ```bash
-cp -r jev-skill-profesional/ ~/.agents/skills/
+cp -r jev-production-grade/ ~/.agents/skills/
 ```
 
 No dependencies beyond Python 3 (stdlib) unless a skill's README says otherwise.
@@ -53,8 +53,8 @@ No dependencies beyond Python 3 (stdlib) unless a skill's README says otherwise.
 Each skill ships its own evaluator. Example:
 
 ```bash
-python3 jev-skill-profesional/scripts/run_evals.py
-TYPESAFE_API_KEY=... python3 jev-skill-profesional/scripts/run_evals.py  # includes live checks
+python3 jev-production-grade/scripts/run_evals.py
+TYPESAFE_API_KEY=... python3 jev-production-grade/scripts/run_evals.py  # includes live checks
 ```
 
 ## Adding a new skill
@@ -69,5 +69,5 @@ TYPESAFE_API_KEY=... python3 jev-skill-profesional/scripts/run_evals.py  # inclu
 
 ## Roadmap
 
-- [x] jev-skill-profesional
+- [x] jev-production-grade
 - [ ] Next skills...
